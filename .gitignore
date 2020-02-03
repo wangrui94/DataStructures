@@ -1,5 +1,5 @@
 #maven ignore
-taget/
+./target
 
 #idea
 .idea/
