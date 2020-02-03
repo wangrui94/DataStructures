@@ -20,12 +20,12 @@ public class Array<E> {
     }
 
     // 获取数组中元素个数
-    int getSize() {
+    public int getSize() {
         return size;
     }
 
     // 获取数组容量
-    int getCapacity() {
+    public int getCapacity() {
         return data.length;
     }
 
@@ -67,12 +67,13 @@ public class Array<E> {
      */
     public void add(int index, E e) {
 
-        if (size == data.length) {
-            throw new IllegalArgumentException("AddLast failed. Array is full");
-        }
-
         if (index < 0 || index > size) {
             throw new IllegalArgumentException("Add failed. index>=0 and index <= siz");
+        }
+
+        if (size == data.length) {
+            // throw new IllegalArgumentException("AddLast failed. Array is full");
+            resize(2 * data.length);
         }
 
         for (int i = size - 1; i >= index ; i--) {
@@ -81,6 +82,14 @@ public class Array<E> {
 
         data[index] = e;
         size++;
+    }
+
+    private void resize(int newCapacity) {
+        E[] newData = (E[]) new Object[newCapacity];
+        for (int i = 0; i < size; i++) {
+            newData[i] = data[i];
+        }
+        data = newData;
     }
 
     /**
@@ -122,6 +131,22 @@ public class Array<E> {
     }
 
     /**
+     * 获取数组最后一个元素
+     * @return 数组最后一个元素
+     */
+    public E getLast() {
+        return get(size-1);
+    }
+
+    /**
+     * 获取数组第一个元素
+     * @return 数组第一个元素
+     */
+    public E getFirst() {
+        return get(0);
+    }
+
+    /**
      * 查找数组中元素e所在的索引
      * @param e 带查找元素
      * @return 如果存在则返回索引，否则返回-1
@@ -150,6 +175,9 @@ public class Array<E> {
         }
         size--;
         data[size] = null;
+        if (size == (data.length / 4 ) && (data.length / 2 != 0)) {
+            resize(data.length / 2);
+        }
         return ret;
     }
 
