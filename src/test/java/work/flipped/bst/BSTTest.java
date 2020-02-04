@@ -11,6 +11,7 @@ public class BSTTest {
         for (int num : nums) {
             bst.add(num);
         }
+        bst.removeMin();
         bst.preOrder();
     }
 
