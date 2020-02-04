@@ -17,10 +17,10 @@
   | **链表** | Java |
   | 普通链表 | [code](src/main/java/work/flipped/list/LinkedListWithHead.java) |
   | **二分搜索树** | Java |
-  | 普通二分搜索树 | × |
+  | 普通二分搜索树 | [code](src/main/java/work/flipped/bst/BST.java) |
   | **集合** | Java |
   | 基于链表实现集合 | × |
-  | 基于二分搜索树实现集合 | × |
+  | 基于二分搜索树实现集合 | [code](src/main/java/work/flipped/set/BSTSet.java) |
   | 基于AVL树实现集合 | × |
   | **映射** | Java |
   | 基于链表实现映射 | × |
