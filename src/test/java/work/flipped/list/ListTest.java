@@ -2,7 +2,7 @@ package work.flipped.list;
 
 import org.testng.annotations.Test;
 
-public class ListTests {
+public class ListTest {
 
     @Test
     public void listTest() {

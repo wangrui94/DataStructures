@@ -1,4 +1,4 @@
-#数据结构
+# 数据结构
 
 用Java语言实现数组，栈，队列，链表，二分搜索树，集合，映射，堆，优先队列，线段树，字典树，并查集，AVL树，红黑树，哈希表。
 
@@ -12,7 +12,7 @@
   | 基于链表实现栈 | [code](src/main/java/work/flipped/stack/LinkedListStack.java) |
   | **队列** | Java |
   | 基于动态数组实现队列 | [code](src/main/java/work/flipped/queue/ArrayQueue.java) |
-  | 基于链表实现队列 | × |
+  | 基于链表实现队列 | [code](src/main/java/work/flipped/queue/LinkedListQueue.java) |
   | 基于动态数组实现循环队列 | [code](src/main/java/work/flipped/queue/LoopQueue.java) |
   | **链表** | Java |
   | 普通链表 | [code](src/main/java/work/flipped/list/LinkedListWithHead.java) |
