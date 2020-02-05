@@ -143,6 +143,7 @@ public class LinkedListWithHead<E> {
 
     /**
      * 删除index位置的元素
+     *
      * @param index 第index个位置
      * @return 删除的元素
      */
@@ -163,6 +164,7 @@ public class LinkedListWithHead<E> {
 
     /**
      * 删除链表首元素（非头节点）
+     *
      * @return 链表首元素
      */
     public E removeFirst() {
@@ -171,10 +173,30 @@ public class LinkedListWithHead<E> {
 
     /**
      * 删除链表尾元素
+     *
      * @return 链表尾元素
      */
     public E removeLast() {
-        return remove(size-1);
+        return remove(size - 1);
+    }
+
+    /**
+     * 删除元素e
+     * @param e 待删除元素
+     */
+    public void removeElement(E e) {
+        Node prev = dummyHead;
+        while (prev.next != null) {
+            if (prev.next.e.equals(e)) {
+                break;
+            }
+            prev = prev.next;
+        }
+        if (prev.next != null) {
+            Node delNode = prev.next;
+            prev.next = delNode.next;
+            delNode.next = null;
+        }
     }
 
     @Override
