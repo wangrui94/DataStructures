@@ -4,9 +4,9 @@
 
 ## 进度
 
-  | 数组  | Java |
-  | :--- | :---: |
-  | 动态数组 | [Code](src/main/java/work/flipped/array/Array.java) |
+  | 数组  | Java |说明|
+  | :--- | :---: |:---:|
+  | 动态数组 | [Code](src/main/java/work/flipped/array/Array.java) |[README](src/main/java/work/flipped/array/Array.md)|
   | **栈** | Java |
   | 基于动态数组实现栈 | [code](src/main/java/work/flipped/stack/ArrayStack.java) |
   | 基于链表实现栈 | [code](src/main/java/work/flipped/stack/LinkedListStack.java) |
@@ -23,8 +23,8 @@
   | 基于二分搜索树实现集合 | [code](src/main/java/work/flipped/set/BSTSet.java) |
   | 基于AVL树实现集合 | × |
   | **映射** | Java |
-  | 基于链表实现映射 | × |
-  | 基于二分搜索树实现映射 | × |
+  | 基于链表实现映射 | [Code]([code](src/main/java/work/flipped/map/LinkedListMap.java) |
+  | 基于二分搜索树实现映射 | [code](src/main/java/work/flipped/map/BSTMap.java |
   | 基于AVL树实现映射 | × |
   | 基于红黑树实现映射 | × |
   | **堆** | Java |

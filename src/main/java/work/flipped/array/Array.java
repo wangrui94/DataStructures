@@ -6,7 +6,6 @@ public class Array<E> {
     private int size;
 
     /**
-     *
      * @param capacity 传入数组的容量
      */
     public Array(int capacity) {
@@ -31,11 +30,12 @@ public class Array<E> {
 
     // 返回数组是否为空
     public boolean isEmpty() {
-        return size==0;
+        return size == 0;
     }
 
     /**
      * 在所有元素前添加一个元素
+     *
      * @param e 待添加元素
      */
     public void addFirst(E e) {
@@ -44,6 +44,7 @@ public class Array<E> {
 
     /**
      * 向所有元素后添加一个新元素
+     *
      * @param e 待添加元素
      */
     public void addLast(E e) {
@@ -57,13 +58,14 @@ public class Array<E> {
         size++;
 
          */
-        add(size,e);
+        add(size, e);
     }
 
     /**
      * 在第index个位置插入一个新元素e
+     *
      * @param index 待插入位置
-     * @param e 待插入元素
+     * @param e     待插入元素
      */
     public void add(int index, E e) {
 
@@ -76,8 +78,8 @@ public class Array<E> {
             resize(2 * data.length);
         }
 
-        for (int i = size - 1; i >= index ; i--) {
-            data[i+1] = data[i];
+        for (int i = size - 1; i >= index; i--) {
+            data[i + 1] = data[i];
         }
 
         data[index] = e;
@@ -94,6 +96,7 @@ public class Array<E> {
 
     /**
      * 获取index索引位置的元素
+     *
      * @param index 索引
      * @return index索引位置的元素
      */
@@ -106,8 +109,9 @@ public class Array<E> {
 
     /**
      * 修改index索引位置的元素为e
+     *
      * @param index 索引
-     * @param e 新值
+     * @param e     新值
      */
     public void set(int index, E e) {
         if (index < 0 || index >= size) {
@@ -118,6 +122,7 @@ public class Array<E> {
 
     /**
      * 查找数组中是否有元素e
+     *
      * @param e 带查找元素
      * @return 如果包含元素e，则返回true，否则，返回false
      */
@@ -132,14 +137,16 @@ public class Array<E> {
 
     /**
      * 获取数组最后一个元素
+     *
      * @return 数组最后一个元素
      */
     public E getLast() {
-        return get(size-1);
+        return get(size - 1);
     }
 
     /**
      * 获取数组第一个元素
+     *
      * @return 数组第一个元素
      */
     public E getFirst() {
@@ -148,6 +155,7 @@ public class Array<E> {
 
     /**
      * 查找数组中元素e所在的索引
+     *
      * @param e 带查找元素
      * @return 如果存在则返回索引，否则返回-1
      */
@@ -162,20 +170,21 @@ public class Array<E> {
 
     /**
      * 删除index索引位置的元素
+     *
      * @param index 索引位置
      * @return 删除的元素
      */
     public E remove(int index) {
-        if (index < 0 || index >=  size) {
+        if (index < 0 || index >= size) {
             throw new IllegalArgumentException("Remove Failed. Index is illegal");
         }
         E ret = data[index];
-        for (int i = index+1; i < size; i++) {
-            data[i-1] = data[i];
+        for (int i = index + 1; i < size; i++) {
+            data[i - 1] = data[i];
         }
         size--;
         data[size] = null;
-        if (size == (data.length / 4 ) && (data.length / 2 != 0)) {
+        if (size == (data.length / 4) && (data.length / 2 != 0)) {
             resize(data.length / 2);
         }
         return ret;
@@ -183,6 +192,7 @@ public class Array<E> {
 
     /**
      * 删除第一个元素
+     *
      * @return 返回删除的第一个元素
      */
     public E removeFirst() {
@@ -191,14 +201,16 @@ public class Array<E> {
 
     /**
      * 删除最后一个元素
+     *
      * @return
      */
     public E removeLast() {
-        return remove(size-1);
+        return remove(size - 1);
     }
 
     /**
      * 从数组中删除元素e
+     *
      * @param e 待删除的元素
      */
     public void removeElement(E e) {
@@ -206,6 +218,20 @@ public class Array<E> {
         if (index != -1) {
             remove(index);
         }
+    }
+
+    /**
+     * 交换元素
+     * @param i
+     * @param j
+     */
+    public void swap(int i, int j) {
+        if (i < 0 || i >= size || j < 0 || j >= size) {
+            throw new IllegalArgumentException("Index is illegal");
+        }
+        E temp = data[i];
+        data[i] = data[j];
+        data[j] = temp;
     }
 
     @Override
