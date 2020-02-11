@@ -1,5 +1,9 @@
 package work.flipped.array;
 
+import org.omg.CORBA.Object;
+
+import javax.jws.Oneway;
+
 public class Array<E> {
 
     private E[] data;
@@ -16,6 +20,14 @@ public class Array<E> {
     // 无参构造函数，数组默认容量为10
     public Array() {
         this(10);
+    }
+
+    public Array(E[] arr) {
+        data = (E[]) new Object[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            data[i] = arr[i];
+        }
+        size = arr.length;
     }
 
     // 获取数组中元素个数
@@ -222,6 +234,7 @@ public class Array<E> {
 
     /**
      * 交换元素
+     *
      * @param i
      * @param j
      */
